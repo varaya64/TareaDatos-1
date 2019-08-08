@@ -2,9 +2,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.util.Scanner;
 
@@ -28,7 +32,7 @@ public class Ventana extends Application {
 		subirAr.setOnAction(e -> leerArchivo());
 		StackPane contenedor = new StackPane();
 		contenedor.getChildren().add(subirAr);
-		Scene informacion = new Scene(contenedor, 200, 200);
+		Scene informacion = new Scene(contenedor, 1000, 700);
 		stage.setScene(informacion);
 		stage.show();
 		
@@ -37,6 +41,7 @@ public class Ventana extends Application {
 	public void leerArchivo(){
 		String nombreArchivo = "archivo.csv";
 		File abrir = new File(nombreArchivo);
+		mat();
 		
 		try {
 			Scanner leer = new Scanner(abrir);
@@ -56,4 +61,9 @@ public class Ventana extends Application {
 
 	}
 	
+	public void mat() {
+		System.out.println("El botón funciona");
+
+	
+	}
 }
